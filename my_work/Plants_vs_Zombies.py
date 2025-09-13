@@ -1,0 +1,48 @@
+def plants_vs_zombies(list1, list2):
+    
+    # Створюю змінні для роботи функції
+    plants = 0
+    zombies = 0
+    list1 = list1
+    list2 = list2
+
+    # Підготовлюю списки
+    while len(list1) != len(list2):
+        if len(list1) > len(list2):
+            list2.append(0)
+        else:
+            list1.append(0) 
+
+    # Проводжу бій
+    for i in range(len(list1)):
+        if list1[i] > list2[i]:
+            zombies += 1
+        elif list1[i] < list2[i]:
+            plants += 1
+
+    # Підведення пісумків
+    if zombies < plants:
+        return True
+    elif zombies > plants:
+        return False
+    else:
+        zombies_initial_strength = 0
+        for i in list1:
+            zombies_initial_strength += i
+        plants_initial_strength = 0
+        for i in list2:
+            plants_initial_strength += i
+        return plants_initial_strength >= zombies_initial_strength
+
+# Перевірка
+
+print(plants_vs_zombies([ 1, 3, 5, 7 ], [ 2, 4, 6, 8 ]))
+print(plants_vs_zombies([ 1, 3, 5, 7 ], [ 2, 4 ]))
+print(plants_vs_zombies([ 1, 3, 5, 7 ], [ 2, 4, 0, 8 ]))
+print(plants_vs_zombies([ 2, 1, 1, 1 ], [ 1, 2, 1, 1 ]))
+
+#zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4, 6, 8 ] -> True
+#zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4 ] -> False
+#zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4, 0, 8 ] -> True
+#zombies=[ 2, 1, 1, 1 ] plants=[ 1, 2, 1, 1 ] -> True
+    
