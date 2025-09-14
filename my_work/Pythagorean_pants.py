@@ -1,4 +1,5 @@
 def Pythagorean_pants(numbers):
+    """Функція Pythagorean_pants приймає три параметри у вигляді цілих додатніх чисел"""
     numbers_ = sorted(numbers)
     if numbers_[0] ** 2 + numbers_[1] ** 2 == numbers_[2] ** 2 :
         return True

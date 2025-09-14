@@ -1,5 +1,7 @@
 def plants_vs_zombies(list1, list2):
-    
+    # Створюю документацію
+    """Функція plants_vs_zombies приймає 2 параметри у вигляді списків з натуральними числами """
+
     # Створюю змінні для роботи функції
     plants = 0
     zombies = 0
@@ -45,4 +47,4 @@ print(plants_vs_zombies([ 2, 1, 1, 1 ], [ 1, 2, 1, 1 ]))
 #zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4 ] -> False
 #zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4, 0, 8 ] -> True
 #zombies=[ 2, 1, 1, 1 ] plants=[ 1, 2, 1, 1 ] -> True
-    
+__version__ = "1.0"   
