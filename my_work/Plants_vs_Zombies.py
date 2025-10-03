@@ -60,7 +60,7 @@ print(plants_vs_zombies([ 1, 3, 5, 7 ]))
 print(plants_vs_zombies([ 1, 3, 5, 7 ], "qq"))
 print(plants_vs_zombies([ 1, 3, 5, 7 ], [ 2, 4, "qq", 8 ]))
 print(plants_vs_zombies([ 2, 1, 1, 1 ], [ 1, 2, 1, 1 ]))
-
+print(plants_vs_zombies.__doc__)
 #zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4, 6, 8 ] -> True
 #zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4 ] -> False
 #zombies=[ 1, 3, 5, 7 ] plants=[ 2, 4, 0, 8 ] -> True

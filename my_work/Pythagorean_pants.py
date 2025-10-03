@@ -16,5 +16,5 @@ def Pythagorean_pants(numbers = 0):
 print(Pythagorean_pants(["ііі", 3, 4]))
 print(Pythagorean_pants([6, 8, 10]))   
 print(Pythagorean_pants([100, 3, 65]))   
-  
+print(Pythagorean_pants.__doc__)  
 __version__ = '1.0'

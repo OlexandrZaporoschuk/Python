@@ -33,4 +33,5 @@ def employee_WSG(days: int, work_days: int, rest_days: int, start_date: datetime
 print(employee_WSG(5, 2, 1, datetime.datetime(2020, 1, 30)))
 print(employee_WSG("eee", 2, 1, datetime.datetime(2020, 1, 30)))
 print(employee_WSG.__doc__)
+__version__ = "1.0" 
 #days: 5, work_days: 2, rest_days: 1, start_date: datetime(2020, 1, 30)
