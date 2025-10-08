@@ -43,4 +43,7 @@ def perse_syte(new_url: str, result = []):
 for i in perse_syte('https://webscraper.io/test-sites/e-commerce/static/computers/laptops'):
      print(i)
 
+if __name__ == "__main__":
+    for i in perse_syte('https://webscraper.io/test-sites/e-commerce/static/computers/laptops'):
+        print(i)
 __version__ = '0.1'
