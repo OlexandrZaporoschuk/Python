@@ -1,7 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
+import logging
+
+logger = logging.getLogger(f"{__name__}")
+logger.setLevel(logging.INFO)
+
+
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
 
 def perse_syte(new_url: str, result = []):
+    logger.info(f"Start: {new_url}")
     if not result:
         result = []
     result_purs = []
@@ -12,10 +24,14 @@ def perse_syte(new_url: str, result = []):
 
     """Отримуємо HTML-код сторінки."""
     response = requests.get(new_url, headers=headers)
-    response.raise_for_status()
-    page_html = response.text
-
-
+    if response.status_code >= 200 and response.status_code < 300:
+        response.raise_for_status()
+        page_html = response.text
+        logger.info(f'ping status code: {response.status_code}')
+    else:
+        logger.error(f'ping status code: {response.status_code}')
+        return
+    
     # -----
 	
     soup = BeautifulSoup(page_html, 'html.parser')
@@ -39,9 +55,6 @@ def perse_syte(new_url: str, result = []):
         return result
     else:
         return perse_syte(f"https://webscraper.io{soup.find("a", class_ = "page-link next")["href"]}", result)
-
-for i in perse_syte('https://webscraper.io/test-sites/e-commerce/static/computers/laptops'):
-     print(i)
 
 if __name__ == "__main__":
     for i in perse_syte('https://webscraper.io/test-sites/e-commerce/static/computers/laptops'):
